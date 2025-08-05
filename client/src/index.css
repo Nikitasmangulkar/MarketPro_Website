@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(210, 40%, 13%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215, 25%, 44%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 40%, 13%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(210, 40%, 13%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(217, 90%, 54%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(210, 40%, 13%);
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(210, 40%, 13%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(217, 90%, 54%);
+  --radius: 0.5rem;
+  --brand-blue: hsl(217, 90%, 54%);
+  --brand-blue-dark: hsl(217, 90%, 44%);
+  --brand-amber: hsl(45, 93%, 47%);
+  --slate-50: hsl(210, 40%, 98%);
+  --slate-600: hsl(210, 20%, 40%);
+  --slate-700: hsl(210, 25%, 35%);
+  --slate-800: hsl(210, 30%, 23%);
+}
+
+.dark {
+  --background: hsl(210, 20%, 8%);
+  --foreground: hsl(210, 40%, 98%);
+  --muted: hsl(210, 20%, 15%);
+  --muted-foreground: hsl(215, 25%, 65%);
+  --popover: hsl(210, 20%, 8%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --card: hsl(210, 20%, 8%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --border: hsl(210, 20%, 15%);
+  --input: hsl(210, 20%, 15%);
+  --primary: hsl(217, 90%, 54%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(210, 20%, 15%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --accent: hsl(210, 20%, 15%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(217, 90%, 54%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-brand-blue {
+    color: var(--brand-blue);
+  }
+  .bg-brand-blue {
+    background-color: var(--brand-blue);
+  }
+  .hover\:bg-brand-blue-dark:hover {
+    background-color: var(--brand-blue-dark);
+  }
+  .text-brand-amber {
+    color: var(--brand-amber);
+  }
+  .bg-brand-amber {
+    background-color: var(--brand-amber);
+  }
+  .text-slate-50 {
+    color: var(--slate-50);
+  }
+  .text-slate-600 {
+    color: var(--slate-600);
+  }
+  .text-slate-700 {
+    color: var(--slate-700);
+  }
+  .text-slate-800 {
+    color: var(--slate-800);
+  }
+  .bg-slate-50 {
+    background-color: var(--slate-50);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(210, 40%, 96%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(215, 25%, 65%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(215, 25%, 55%);
+}
